@@ -37,7 +37,7 @@ class ArtRepository @Inject constructor(
                 Resource.error("Error", null)
             }
         } catch (e: Exception) {
-            Resource.error("No, data!", null)
+            Resource.error("No data!", null)
         }
     }
 }
