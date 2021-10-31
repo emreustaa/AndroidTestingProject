@@ -1,71 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/ivArt"
-        android:layout_width="193dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="77dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/etNameText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <EditText
         android:id="@+id/etNameText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Enter Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etArtistText"
-        app:layout_constraintStart_toStartOf="@+id/etArtistText"
-        app:layout_constraintTop_toBottomOf="@+id/ivArt" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etArtistText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Enter Artist"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etYearText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNameText" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etYearText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Enter Year"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
-        app:layout_constraintStart_toStartOf="@+id/etArtistText"
-        app:layout_constraintTop_toBottomOf="@+id/etArtistText" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginBottom="62dp"
-        android:text="SAVE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etYearText" />
+        android:text="SAVE" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
