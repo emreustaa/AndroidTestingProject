@@ -11,11 +11,14 @@ import com.example.artbooktesting.repo.ArtRepositoryInterface
 import com.example.artbooktesting.roomdb.ArtDao
 import com.example.artbooktesting.roomdb.ArtsDatabase
 import com.example.artbooktesting.util.Util.BASE_URL
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -33,10 +36,21 @@ object AppModule {
     @Provides
     fun injectDao(database: ArtsDatabase) = database.artDao()
 
+    var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+
+    val client = OkHttpClient.Builder()
+        .addInterceptor(interceptor)
+        .build()
+
+
+    var gson = GsonBuilder()
+        .setLenient()
+        .create()
+
     @Singleton
     @Provides
     fun injectRetrofitAPI(): RetrofitAPI {
-        return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
+        return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).client(client)
             .baseUrl(BASE_URL).build().create(RetrofitAPI::class.java)
     }
 
